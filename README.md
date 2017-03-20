@@ -7,6 +7,12 @@ The database is currently using PostgreSQL. If you want to use a different datab
 To set everything up and run the tests:
 
 ```
+# install postgres
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+sudo service postgresql restart
+# add user to postgres
+sudo -i -u postgres
+createuser --interactive
 bundle
 # Creates the database, runs migrations, starts Sphinx:
 ./bin/rake morphology:setup
